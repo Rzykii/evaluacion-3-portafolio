@@ -354,5 +354,7 @@
   </div>
 </footer>
 
+<script src="/assets/js/form.js"></script>
+
 </body>
 </html>
