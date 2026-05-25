@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm navbar-light mb-5 py-3 fixed-top px-3">
+<nav class="navbar navbar-expand-sm bg-light mb-5 py-3 fixed-top px-3">
   <div class="container-fluid">
     <a class="navbar-brand text-primary fw-bold px-4" href="#">Sebastián Muñoz</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
