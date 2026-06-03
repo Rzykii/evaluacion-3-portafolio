@@ -1,0 +1,5 @@
+# Proteger carpeta admin - Denegar acceso directo a listados
+Options -Indexes
+
+# Si alguien intenta acceder directamente sin sesión, redirigir al login
+# (la protección principal está en PHP via auth.php)

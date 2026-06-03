@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+/**
+ * index.php — Página principal del portafolio
+ */
+require_once 'auth.php';
+$sesionActiva = verificarSesionPublica();
+?><!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -35,9 +41,16 @@
           <a class="nav-link fw-bold px-3" href="#Contacto">Contacto</a>
         </li>
       </ul>
-      <form class="d-flex">               
-        <button class="btn btn-primary fw-bold" type="button">
-          <i class="bi bi-lock"></i> Inicio de sesión</button>
+      <form class="d-flex">
+        <?php if ($sesionActiva): ?>
+          <a href="dashboard.php" class="btn btn-success fw-bold me-2" type="button">
+            <i class="bi bi-speedometer2"></i> Dashboard</a>
+          <a href="logout.php" class="btn btn-outline-danger fw-bold" type="button" onclick="return confirm('¿Cerrar sesión?')">
+            <i class="bi bi-box-arrow-right"></i></a>
+        <?php else: ?>
+          <a href="login.php" class="btn btn-primary fw-bold" type="button">
+            <i class="bi bi-lock"></i> Inicio de sesión</a>
+        <?php endif; ?>
       </form>
     </div>
   </div>
@@ -56,7 +69,7 @@
       </div>
       <div class="contact-item">
         <i class="bi bi-telephone"></i>
-        <span>+1 234 567 890</span>
+        <span>+56 9 87654321</span>
       </div>
       <div class="contact-item">
         <i class="bi bi-geo-alt"></i>
@@ -327,7 +340,7 @@
         </div>
         <div class="contact-item">
           <i class="bi bi-telephone"></i>
-          <span>+1 234 567 890</span>
+          <span>+56 9 87654321</span>
         </div>
         <div class="contact-item">
           <i class="bi bi-geo-alt"></i>

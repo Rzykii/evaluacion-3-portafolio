@@ -1,0 +1,29 @@
+# ============================================================
+# .htaccess — Protección y configuración del portafolio
+# ============================================================
+
+# Proteger archivos sensibles
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger archivos de configuración
+<FilesMatch "^(db\.php|sql_setup\.sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Desactivar listado de directorios
+Options -Indexes
+
+# Codificación por defecto
+AddDefaultCharset UTF-8
+
+# Proteger carpeta admin con redirección si no hay sesión
+# (la protección real se hace vía PHP en auth.php)
+
+# RewriteEngine On
+# RewriteCond %{REQUEST_URI} ^/admin/
+# RewriteCond %{HTTP_COOKIE} !PHPSESSID
+# RewriteRule .* login.php [L,R=302]
